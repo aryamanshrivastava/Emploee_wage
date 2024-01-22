@@ -4,6 +4,7 @@ public class Employee {
     Integer wagePerHour;
     Integer workHour = 0;
     Integer attendance;
+    Integer totalWorkHour =0;
 
     Employee(String n, Integer i, Integer w) {
         this.name = n;
