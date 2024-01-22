@@ -9,14 +9,17 @@ public class Main {
         }else{
             e1.attendance = 2;
         }
-        if (e1.attendance == 1) {
-            System.out.println("Employee is present");
-            e1.workHour = 8;
-        } else if(e1.attendance == 0){
-            System.out.println("Employee is absent");
-        }else{
-            System.out.println("Employee is part time");
-            e1.workHour = 4;
+        switch(e1.attendance){
+            case 1:
+                System.out.println("Employee is present");
+                e1.workHour = 8;
+                break;
+            case 2:
+                System.out.println("Employee is absent");
+                break;
+            default:
+                System.out.println("Employee is part time");
+                e1.workHour = 4;
         }
         Main m1 = new Main();
         System.out.println(m1.calculateSalary(e1));
