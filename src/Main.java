@@ -22,11 +22,15 @@ public class Main {
                 e1.workHour = 4;
         }
         Main m1 = new Main();
-        System.out.println(m1.calculateSalary(e1));
+        System.out.println("Monthly Salary: " + m1.calculateMonthlySalary(e1));
 
 
     }
     double calculateSalary(Employee e){
         return e.workHour*e.wagePerHour;
+    }
+    double calculateMonthlySalary(Employee e) {
+        double dailySalary = calculateSalary(e);
+        return dailySalary * 20;
     }
 }
