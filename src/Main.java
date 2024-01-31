@@ -1,10 +1,13 @@
 public class Main {
     public static void main(String[] args) {
+        computeEmpWage();
+    }
+
+    public static void computeEmpWage() {
         Employee e1 = new Employee("Aryan", 1, 200);
         int totalDaysWorked = 0;
         while (e1.totalWorkHour < 100 && totalDaysWorked < 20) {
             int check = (int) ((Math.random() * 10)) % 3;
-
             if (check == 0) {
                 e1.attendance = 0;
             } else if (check == 1) {
@@ -12,7 +15,6 @@ public class Main {
             } else {
                 e1.attendance = 2;
             }
-
             switch (e1.attendance) {
                 case 1:
                     System.out.println("Employee is present");
@@ -29,11 +31,11 @@ public class Main {
             e1.totalWorkHour += e1.workHour;
             totalDaysWorked++;
             System.out.println("Day " + totalDaysWorked + " - Total Work Hours: " + e1.totalWorkHour);
-            }
-        Main m1 = new Main();
-        System.out.println("Total Salary: " + m1.calculateSalary(e1));
+        }
+        System.out.println("Total Salary: " + calculateSalary(e1));
     }
-    double calculateSalary(Employee e){
+
+    public static double calculateSalary(Employee e) {
         return e.totalWorkHour * e.wagePerHour;
     }
 }
